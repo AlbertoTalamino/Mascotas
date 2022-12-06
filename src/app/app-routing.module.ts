@@ -7,8 +7,8 @@ import { FormularioMascotaComponent } from './views/formulario-mascota/formulari
 const routes: Routes = [
   {path: '', component: ListaMascotasComponent},
   {path: 'listaMascotas', component: ListaMascotasComponent},
-  {path: "detalleMascotas/:documentId", component: DetalleMascotaComponent},
-  {path: "formulario/:documentId", component: FormularioMascotaComponent},
+  {path: "detalleMascota/:documentId", component: DetalleMascotaComponent},
+  {path: "formularioMascota/:documentId", component: FormularioMascotaComponent},
   {path: '**' , redirectTo: '/listaMascotas', pathMatch: 'full'},
 ];
 

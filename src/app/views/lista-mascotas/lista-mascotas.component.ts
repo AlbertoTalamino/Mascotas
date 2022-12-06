@@ -9,7 +9,7 @@ import { MascotasServiceService } from '../../model/mascotas-service.service';
 })
 export class ListaMascotasComponent implements OnInit {
 
-  listaMascotas: any[] = []
+  listaMascotas: any[] = [];
 
   constructor(private mascotaService: MascotasServiceService) { }
 
@@ -20,11 +20,12 @@ export class ListaMascotasComponent implements OnInit {
   getAll(){ 
     this.mascotaService.getAllMascotas().subscribe((mascotasSnapshot: any) => {
       mascotasSnapshot.forEach((mascotaData:any) => {
-        console.log(mascotaData);
+
         this.listaMascotas.push({
-          id: mascotaData.payload.doc.id,
+          id: mascotaData.payload.doc.id, 
           data: mascotaData.payload.doc.data()
         });
+        
       });
     })
   }

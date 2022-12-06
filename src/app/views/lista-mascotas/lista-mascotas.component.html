@@ -2,10 +2,13 @@
 	<abbr title="Haz click en cualquier botton para ver los detalles de la mascota" ><button class="btn btn-warning">?</button></abbr>
 </h3>
 
+
 <ul *ngFor="let mascota of listaMascotas" class="list-group">
     <br>
-     <a routerLink="/detalleMascotas/{{mascota.id}}" class="btn btn-primary">
-        Nombre: {{mascota.data.nombre}} <br>
-        Propietario: {{mascota.data.nombrePropietario}}
-	</a>
+    <div class="contenedor">
+        <a routerLink="/detalleMascota/{{mascota.id}}" class="btn btn-primary" style="width: 18rem;">
+            Nombre: {{mascota.data.nombre}} <br>
+            Propietario: {{mascota.data.nombrePropietario}} 
+	    </a>
+    </div>
 </ul>

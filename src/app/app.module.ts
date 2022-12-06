@@ -11,6 +11,7 @@ import { environment } from '../environments/environment';
 import { ListaMascotasComponent } from './views/lista-mascotas/lista-mascotas.component';
 import { DetalleMascotaComponent } from './views/detalle-mascota/detalle-mascota.component';
 import { FormularioMascotaComponent } from './views/formulario-mascota/formulario-mascota.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import { FormularioMascotaComponent } from './views/formulario-mascota/formulari
     AppRoutingModule,
     NgbModule,
     AngularFirestoreModule, 
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

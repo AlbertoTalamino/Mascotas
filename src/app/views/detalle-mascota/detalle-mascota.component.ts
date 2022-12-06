@@ -13,11 +13,13 @@ import { MascotasServiceService } from '../../model/mascotas-service.service';
 export class DetalleMascotaComponent implements OnInit {
 
   mascota?: Mascota;
+  //Id de Firebase
+  id?: string;
 
   constructor(
-    private mascotasService: MascotasServiceService,
+    private mascotaService: MascotasServiceService,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location 
   ) { }
 
   ngOnInit(): void {
@@ -27,29 +29,29 @@ export class DetalleMascotaComponent implements OnInit {
   getMascota(){
 
     this.route.paramMap.subscribe((params) => {
-      let id = String(params.get('id'));
+      let id = String(params.get('documentId'));
 
-      this.mascotasService.getMascota(id).subscribe((resp) => {
-        console.log(resp);
-        //this.mascota = resp.data;
+      this.mascotaService.getMascota(id).subscribe((resp: any) => {
+
+        this.id = resp.payload.id;
+ 
+        this.mascota = {
+          idMascota: resp.payload.data()['idMascota'],
+          nombre: resp.payload.data()['nombre'],
+          especie: resp.payload.data()['especie'],
+          raza: resp.payload.data()['raza'],
+          edad: resp.payload.data()['edad'],
+          sexo: resp.payload.data()['sexo'],
+          nombrePropietario: resp.payload.data()['nombrePropietario']
+        };
       });
-    });
+     });
 
   }
-
-  // getAll(){
-  //   this.mascotaService.getAllMascotas().subscribe((mascotasSnapshot: any) => {
-  //     mascotasSnapshot.forEach((mascotaData:any) => {
-  //       console.log(mascotaData);
-  //       this.listaMascotas.push({
-  //         id: mascotaData.payload.doc.id,
-  //         data: mascotaData.payload.doc.data()
-  //       });
-  //     });
-  //   })
-  // }
 
   goBack(): void {
     this.location.back();
   }
+
+  
 }
