@@ -15,8 +15,8 @@ export class MascotasServiceService {
   //CRUD
 
   //Read a single one
-  getMascota(id: string){
-    return this.firebase.collection(this.miColeccion).doc(id).snapshotChanges();
+  getMascota(documentId: string){
+    return this.firebase.collection(this.miColeccion).doc(documentId).snapshotChanges();
   }
 
   //Read all
@@ -38,10 +38,10 @@ export class MascotasServiceService {
   deleteMascota(documentId: string){
     return this.firebase.collection(this.miColeccion).doc(documentId).delete();
   }
-  
+
   //Where
   getSpecificMascota(documentId: string, id: number){
-    return this.firebase.collection(this.miColeccion, ref => ref.where('id', '==', id)).snapshotChanges();
+    return this.firebase.collection(this.miColeccion, ref => ref.where('id', '==', id)).doc(documentId).snapshotChanges();
   }
 
 }
