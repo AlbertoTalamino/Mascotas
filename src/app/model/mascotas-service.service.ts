@@ -38,5 +38,10 @@ export class MascotasServiceService {
   deleteMascota(documentId: string){
     return this.firebase.collection(this.miColeccion).doc(documentId).delete();
   }
+  
+  //Where
+  getSpecificMascota(documentId: string, id: number){
+    return this.firebase.collection(this.miColeccion, ref => ref.where('id', '==', id)).snapshotChanges();
+  }
 
 }
