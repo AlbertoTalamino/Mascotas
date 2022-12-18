@@ -71,7 +71,7 @@ export class FormularioMascotaComponent implements OnInit {
     
     this.mascotaObject[0].data.nombre = " ";
     
-    this.mascotaService.updateMascota(this.id, this.mascotaObject[0]);
+    this.mascotaService.updateMascota(this.id, this.mascotaObject[0].data);
   }     
   
   goBack(): void {
