@@ -1,52 +1,58 @@
 <div class="contenedor">
     <div class="card">  
-        <form>
+        <form [formGroup]="dataMascota" (ngSubmit)="crearMascota()">
             <div class="form-group">
               <label for="idMascota">Id</label>
-              <input class="form-control" id="idMascota" required>
+              <input class="form-control" id="idMascota" formControlName="idMascota">
             </div>
 
             <br/>
             <div class="form-group">
                 <label for="nombre">Nombre</label>
-                <input class="form-control" id="nombre" required>
+                <input class="form-control" id="nombre" formControlName="nombre">
             </div>
 
             <br/>
             <div class="form-group">
                 <label for="especie">Especie</label>
-                <input class="form-control" id="especie" required>
+                <input class="form-control" id="especie" formControlName="especie">
             </div>
 
             <br/>
             <div class="form-group">
                 <label for="raza">Raza</label>
-                <input class="form-control" id="raza" required>
+                <input class="form-control" id="raza" formControlName="raza">
             </div>
 
             <br/>
             <div class="form-group">
                 <label for="edad">Edad</label>
-                <input class="form-control" id="edad" required>
+                <input class="form-control" id="edad" formControlName="edad">
             </div>
 
             <br/>
             <div class="form-group">
                 <label for="sexo">Sexo</label>
-                <input class="form-control" id="sexo" required>
+                <input class="form-control" id="sexo" formControlName="sexo">
             </div>
 
             <br/>
             <div class="form-group">
                 <label for="nombrePropietario">Propietario</label>
-                <input class="form-control" id="nombrePropietario" required>
+                <input class="form-control" id="nombrePropietario" formControlName="nombrePropietario">
             </div>
 
             <br/>
-            <button class="btn btn-info" type="button" class="btn btn-primary" (click)="crearMascota()">Guardar</button>
+            <button type="submit" class="btn btn-info" [disabled]="dataMascota.invalid">Guardar</button>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button type="button" class="btn btn-warning" (click)="goBack()">Volver</button>
             
         </form>
     </div>
 </div>
+
+<!-- <form [formGroup]="dataMascota">
+    <input type="text" formControlName="control">
+    <input type="text" formControlName="control">
+    <input type="text" formControlName="control">
+</form> -->

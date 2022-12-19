@@ -26,8 +26,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NgbModule,
     AngularFirestoreModule, 
     AngularFireModule.initializeApp(environment.firebase),
-    ReactiveFormsModule,
-    FormsModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

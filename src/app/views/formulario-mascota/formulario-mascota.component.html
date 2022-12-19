@@ -1,4 +1,4 @@
-<div class="contenedor">
+<!-- <div class="contenedor">
     <div class="card" *ngIf="mascota">  
         <form>
             <div class="form-group">
@@ -51,5 +51,59 @@
       
         </form>
     </div>
+</div> -->
+
+<div class="contenedor">
+    <div class="card">  
+        <form [formGroup]="dataMascota">
+            <div class="form-group">
+              <label>Id</label>
+              <input class="form-control" formControlName="idMascota">
+            </div>
+
+            <br/>
+            <div class="form-group">
+                <label>Nombre</label>
+                <input class="form-control" formControlName="nombre">
+            </div>
+
+            <br/>
+            <div class="form-group">
+                <label>Especie</label>
+                <input class="form-control" formControlName="especie">
+            </div>
+
+            <br/>
+            <div class="form-group">
+                <label>Raza</label>
+                <input class="form-control" formControlName="raza">
+            </div>
+
+            <br/>
+            <div class="form-group">
+                <label>Edad</label>
+                <input class="form-control" formControlName="edad">
+            </div>
+
+            <br/>
+            <div class="form-group">
+                <label>Sexo</label>
+                <input class="form-control" formControlName="sexo">
+            </div>
+
+            <br/>
+            <div class="form-group">
+                <label>Propietario</label>
+                <input class="form-control" formControlName="nombrePropietario">
+            </div>
+
+            <br/>
+            <button class="btn btn-info" type="button" class="btn btn-primary" (click)="onSubmit()">&nbsp;&nbsp;&nbsp;&nbsp;Guardar&nbsp;&nbsp;&nbsp;&nbsp;</button>
+            &nbsp;
+            <button type="button" class="btn btn-warning" (click)="goBack()">&nbsp;&nbsp;Volver&nbsp;&nbsp;</button>
+            <br>
+            <button type="button" class="btn btn-danger" (click)="eliminaMascota()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Eliminar Mascota&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+      
+        </form>
+    </div>
 </div>
-  
