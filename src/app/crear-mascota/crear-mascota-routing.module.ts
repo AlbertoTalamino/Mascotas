@@ -4,7 +4,8 @@ import { CrearComponent } from './crear/crear.component';
 
 
 const routes: Routes = [
-  {path:'', component: CrearComponent}
+  {path:'crear', component: CrearComponent},
+  {path: '**' , redirectTo: '/crear', pathMatch: 'full'}
 ];
 
 @NgModule({

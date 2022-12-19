@@ -9,8 +9,8 @@ const routes: Routes = [
   {path: 'listaMascotas', component: ListaMascotasComponent},
   {path: "detalleMascota/:documentId", component: DetalleMascotaComponent},
   {path: "formularioMascota/:documentId", component: FormularioMascotaComponent},
-  {path: '**' , redirectTo: '/listaMascotas', pathMatch: 'full'},
-  {path: 'crearMascota', loadChildren: () => import('./crear-mascota/crear-mascota-routing.module').then(m => m.CrearMascotaRoutingModule)}
+  {path: 'crearMascota', loadChildren: () => import('./crear-mascota/crear-mascota.module').then(m => m.CrearMascotaModule)},
+  {path: '**' , redirectTo: '/listaMascotas', pathMatch: 'full'}
 ];
 
 @NgModule({ 

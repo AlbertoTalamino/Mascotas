@@ -12,7 +12,6 @@ import { ListaMascotasComponent } from './views/lista-mascotas/lista-mascotas.co
 import { DetalleMascotaComponent } from './views/detalle-mascota/detalle-mascota.component';
 import { FormularioMascotaComponent } from './views/formulario-mascota/formulario-mascota.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CrearMascotaModule } from './crear-mascota/crear-mascota.module';
 
 @NgModule({
   declarations: [
@@ -28,8 +27,7 @@ import { CrearMascotaModule } from './crear-mascota/crear-mascota.module';
     AngularFirestoreModule, 
     AngularFireModule.initializeApp(environment.firebase),
     ReactiveFormsModule,
-    FormsModule,
-    CrearMascotaModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
